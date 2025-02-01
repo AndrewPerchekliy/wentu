@@ -1,4 +1,5 @@
 use dioxus::prelude::*;
+use dioxus_elements::input::placeholder;
 
 #[component]
 pub fn Footer() -> Element {
@@ -15,12 +16,35 @@ pub fn Footer() -> Element {
             div {  }
             div { 
                 button { class: "playback-buttons",
-                    
+                    id: "playback",
+                    onclick: move |event| {
+                        println!("Ya russkoy")
+                    },
+                    "test"
                 }
                 button { class: "playback-buttons", 
 
                 }
                 button { class: "playback-buttons",
+
+                }
+                input {  
+                    r#type: "file",
+                    accept: "audio/*",
+                    onchange: move |evt| {
+                        match evt.files() {
+                            Some(engine) => {
+                                let files = evt.files();
+                                println!("Files:");
+                                for file in files {
+                                    println!("FileEngine contains files: {:?}", file);
+                                }
+                            }
+                            None => {
+                                println!("No file engine available.");
+                            }
+                        }
+                    }
 
                 }
             }

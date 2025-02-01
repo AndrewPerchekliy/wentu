@@ -75,3 +75,15 @@ footer {
     font-family: "Kanit";
     font-weight: 400;
 }
+
+.playback-buttons {
+    width: 72px;
+    height: 72px;
+}
+#playback {
+    background-color: blue;
+    border: none;
+}
+#playback:hover {
+    background-color: pink;
+}
